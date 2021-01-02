@@ -100,9 +100,9 @@ function draw() {
     fill("brown");
     textStyle(BOLD);
     textSize(30);
-    text("GAME OVER!!!",200,200);
+    text("GAME OVER!!!",width/2,height/2 - 50);
     textSize(20);
-    text("Press button to restart", 200, 250);
+    text("Press button to restart", width/2,height/2 - 25);
     restart.visible = true;
     
     monkey.changeAnimation("stop",monkey_stop);
@@ -130,7 +130,7 @@ function draw() {
 }
 function spawnobstacles(){
   if(frameCount%150 === 0){
-    obstacle = createSprite(600,425,10,10);
+    obstacle = createSprite(width,height-75,10,10);
     obstacle.addImage(obstaceImage);
     obstacle.scale = 0.2;
     
@@ -146,8 +146,8 @@ function spawnobstacles(){
 }
 function spawnbanana(){
   if(frameCount%100 === 0){
-    banana = createSprite(600,200,10,10);
-    banana.y = Math.round(random(100,300));
+    banana = createSprite(width,height/2,10,10);
+    banana.y = Math.round(random(height/4,height/2));
     banana.addImage(bananaImage);
     banana.scale = 0.1;
   
